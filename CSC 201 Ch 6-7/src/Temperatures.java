@@ -28,7 +28,6 @@ public class Temperatures {
 	private static int highTemperature, lowTemperature,averageHigh, averageLow;
 	private static int index;//keeps track of months
 	private static int indexOfHighestTemp=0, indexOfLowestTemp=0;
-	private static String currentMonth;//used for output certain months
 	private static int[][] highAndLowTemps = new int [12][2];//array for highs and lows
 	private static String[] months = new String[12];//array of monthss
 	
@@ -94,7 +93,7 @@ public class Temperatures {
 	private static int findHighestTemp()
 	{
 		double max=highAndLowTemps[0][0];
-		int i;
+		int i;//index for highest
 		for(i=0;i<11;i++)//find highest high temp
 		{
 			if(highAndLowTemps[i][0]>max)
@@ -110,7 +109,7 @@ public class Temperatures {
 	private static int findLowestTemp()
 	{
 		double min=highAndLowTemps[0][1];
-		int i;
+		int i;//index for lowest
 		for(i=0;i<11;i++)//finds lowest low temp
 		{
 			if(highAndLowTemps[i][1]<min)
