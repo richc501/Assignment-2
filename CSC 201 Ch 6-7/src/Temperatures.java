@@ -30,6 +30,8 @@ public class Temperatures {
 	private static int indexOfHighestTemp=0, indexOfLowestTemp=0;
 	private static String currentMonth;//used for output certain months
 	private static int[][] highAndLowTemps = new int [12][2];//array for highs and lows
+	private static String[] months = new String[12];//array of monthss
+	
 	public static void main(String[] args) {
 		inputTempForYear();
 		calculateAverageHigh();
@@ -39,48 +41,34 @@ public class Temperatures {
 		//outputs results
 		System.out.println("Average High: "+averageHigh);
 		System.out.println("Average Low: "+averageLow);
-		findMonthForHighTemp();
-		System.out.println("Highest Temp and Month: "+highAndLowTemps[indexOfHighestTemp][0]+" "+currentMonth+" "+indexOfHighestTemp);
-		findMonthForLowTemp();
-		System.out.println("Lowest Temp and Month: "+highAndLowTemps[indexOfLowestTemp][1]+" "+currentMonth+" "+indexOfLowestTemp);
+		System.out.println("Highest Temp and Month: "+highAndLowTemps[indexOfHighestTemp][0]+" "+months[indexOfHighestTemp]);
+		System.out.println("Lowest Temp and Month: "+highAndLowTemps[indexOfLowestTemp][1]+" "+months[indexOfLowestTemp]);
 	}
 	private static void inputTempForMonth()
 	{
-		System.out.println("Input the high temperature for "+currentMonth+":");
+		System.out.println("Input the high temperature for "+months[index]+":");
 		highTemperature = keyboard.nextInt();//inputs months high temp
 		highAndLowTemps[index][0]=highTemperature;
-		System.out.println("Input the low temperature for "+currentMonth+":");
+		System.out.println("Input the low temperature for "+months[index]+":");
 		lowTemperature = keyboard.nextInt();//inputs months low temp
 		highAndLowTemps[index][1]=lowTemperature;
 	}
 	private static int[][] inputTempForYear()
 	{
+		months[0]="January";
+		months[1]="Febuary";
+		months[2]="March";
+		months[3]="April";
+		months[4]="May";
+		months[5]="June";
+		months[6]="July";
+		months[7]="August";
+		months[8]="September";
+		months[9]="October";
+		months[10]="November";
+		months[11]="December";//fills month array
 		for (index=0;index<=11;index++)//fills array with highs and lows
 		{
-			if(index==0)
-				currentMonth="January";
-			else if(index==1)
-				currentMonth="Febuary";
-			else if(index==2)
-				currentMonth="March";
-			else if(index==3)
-				currentMonth="April";
-			else if(index==4)
-				currentMonth="May";
-			else if(index==5)
-				currentMonth="June";
-			else if(index==6)
-				currentMonth="July";
-			else if(index==7)
-				currentMonth="August";
-			else if(index==8)
-				currentMonth="September";
-			else if(index==9)
-				currentMonth="October";
-			else if(index==10)
-				currentMonth="November";
-			else if(index==11)
-				currentMonth="December";
 			inputTempForMonth();
 		}
 		return highAndLowTemps;
@@ -132,62 +120,5 @@ public class Temperatures {
 			}
 		}
 		return indexOfLowestTemp;
-	}
-	//finds month for highest and lowest temp
-	private static String findMonthForHighTemp()
-	{
-		if(indexOfHighestTemp==0)
-			currentMonth="January";
-		else if(indexOfHighestTemp==1)
-			currentMonth="Febuary";
-		else if(indexOfHighestTemp==2)
-			currentMonth="March";
-		else if(indexOfHighestTemp==3)
-			currentMonth="April";
-		else if(indexOfHighestTemp==4)
-			currentMonth="May";
-		else if(indexOfHighestTemp==5)
-			currentMonth="June";
-		else if(indexOfHighestTemp==6)
-			currentMonth="July";
-		else if(indexOfHighestTemp==7)
-			currentMonth="August";
-		else if(indexOfHighestTemp==8)
-			currentMonth="September";
-		else if(indexOfHighestTemp==9)
-			currentMonth="October";
-		else if(indexOfHighestTemp==10)
-			currentMonth="November";
-		else if(indexOfHighestTemp==11)
-			currentMonth="December";
-		return currentMonth;
-	}
-	private static String findMonthForLowTemp()
-	{
-		if(indexOfLowestTemp==0)
-			currentMonth="January";
-		else if(indexOfLowestTemp==1)
-			currentMonth="Febuary";
-		else if(indexOfLowestTemp==2)
-			currentMonth="March";
-		else if(indexOfLowestTemp==3)
-			currentMonth="April";
-		else if(indexOfLowestTemp==4)
-			currentMonth="May";
-		else if(indexOfLowestTemp==5)
-			currentMonth="June";
-		else if(indexOfLowestTemp==6)
-			currentMonth="July";
-		else if(indexOfLowestTemp==7)
-			currentMonth="August";
-		else if(indexOfLowestTemp==8)
-			currentMonth="September";
-		else if(indexOfLowestTemp==9)
-			currentMonth="October";
-		else if(indexOfLowestTemp==10)
-			currentMonth="November";
-		else if(indexOfLowestTemp==11)
-			currentMonth="December";
-		return currentMonth;
 	}
 }
