@@ -33,17 +33,17 @@ public class Temperatures {
 	
 	public static void main(String[] args) {
 		inputTempForYear();
-		calculateAverageHigh();
-		calculateAverageLow();
-		findHighestTemp();
-		findLowestTemp();
+		calculateAverageHigh(highAndLowTemps);
+		calculateAverageLow(highAndLowTemps);
+		findHighestTemp(highAndLowTemps);
+		findLowestTemp(highAndLowTemps);
 		//outputs results
 		System.out.println("Average High: "+averageHigh);
 		System.out.println("Average Low: "+averageLow);
 		System.out.println("Highest Temp and Month: "+highAndLowTemps[indexOfHighestTemp][0]+" "+months[indexOfHighestTemp]);
 		System.out.println("Lowest Temp and Month: "+highAndLowTemps[indexOfLowestTemp][1]+" "+months[indexOfLowestTemp]);
 	}
-	private static void inputTempForMonth()
+	private static void inputTempForMonth(int[][] highAndLowTemps)
 	{
 		System.out.println("Input the high temperature for "+months[index]+":");
 		highTemperature = keyboard.nextInt();//inputs months high temp
@@ -68,11 +68,11 @@ public class Temperatures {
 		months[11]="December";//fills month array
 		for (index=0;index<=11;index++)//fills array with highs and lows
 		{
-			inputTempForMonth();
+			inputTempForMonth(highAndLowTemps);
 		}
 		return highAndLowTemps;
 	}
-	private static int calculateAverageHigh()
+	private static int calculateAverageHigh(int[][] highAndLowTemps)
 	{
 		for(int i=0;i<=11;i++)//finds sum of high temps
 		{
@@ -81,7 +81,7 @@ public class Temperatures {
 		averageHigh/=12;//calculates average
 		return averageHigh;
 	}
-	private static int calculateAverageLow()
+	private static int calculateAverageLow(int[][] highAndLowTemps)
 	{
 		for(int i=0;i<=11;i++)//finds sum of low temps
 		{
@@ -90,7 +90,7 @@ public class Temperatures {
 		averageLow/=12;//calculates average
 		return averageLow;
 	}
-	private static int findHighestTemp()
+	private static int findHighestTemp(int[][] highAndLowTemps)
 	{
 		double max=highAndLowTemps[0][0];
 		int i;//index for highest
@@ -104,7 +104,7 @@ public class Temperatures {
 		}
 		return indexOfHighestTemp;
 	}
-	private static int findLowestTemp()
+	private static int findLowestTemp(int[][] highAndLowTemps)
 	{
 		double min=highAndLowTemps[0][1];
 		int i;//index for lowest
