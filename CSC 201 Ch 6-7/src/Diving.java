@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Diving 
 {
-	private static double validScore, degreeOfDifficulty, totalScore, max=0, min=0;
+	private static double validScore, degreeOfDifficulty, totalScore;
 	private static int index;
 	private static double[] divingScores=new double[7]; 
 	public static Scanner keyboard = new Scanner(System.in);
@@ -35,9 +35,8 @@ public class Diving
 		double temporaryNumber;
 		do
 		{
-			for(int i=0; i<=divingScores.length-2;i++)
+			for(int i=0; i<=divingScores.length-2;i++)//swaps array indexes till lowest to highest
 			{
-				
 				int nextNumber=i+1;
 				if(divingScores[i]>divingScores[nextNumber])
 				{
@@ -46,6 +45,7 @@ public class Diving
 					divingScores[i]=temporaryNumber;
 				}
 			}
+			//tests if array is lowest to highest
 			lowestToHighest = divingScores[0]<divingScores[1]&&divingScores[1]<divingScores[2]&&divingScores[2]<divingScores[3]&&divingScores[3]<divingScores[4]&&divingScores[4]<divingScores[5]&&divingScores[5]<divingScores[6]&&divingScores[6]>divingScores[0];
 		}while(lowestToHighest==false);
 //		System.out.println(divingScores[0]);
@@ -71,11 +71,11 @@ public class Diving
 	private static double calculateScore()
 	{
 		double sum=0;
-		for(int i=1;i<(divingScores.length-1);i++)
+		for(int i=1;i<(divingScores.length-1);i++)//adds array from index 2 to index 6
 		{
 			sum=sum+divingScores[i];
 		}
-		totalScore=(sum*degreeOfDifficulty)*0.6;
+		totalScore=(sum*degreeOfDifficulty)*0.6;//finds final score
 		return totalScore;
 	}
 }
