@@ -38,7 +38,7 @@ public class Diving
 			for(int i=0; i<=divingScores.length-2;i++)//swaps array indexes till lowest to highest
 			{
 				int nextNumber=i+1;
-				if(divingScores[i]>divingScores[nextNumber])
+				if(divingScores[i]>=divingScores[nextNumber])
 				{
 					temporaryNumber=divingScores[nextNumber];
 					divingScores[nextNumber]=divingScores[i];
@@ -46,7 +46,7 @@ public class Diving
 				}
 			}
 			//tests if array is lowest to highest
-			lowestToHighest = divingScores[0]<divingScores[1]&&divingScores[1]<divingScores[2]&&divingScores[2]<divingScores[3]&&divingScores[3]<divingScores[4]&&divingScores[4]<divingScores[5]&&divingScores[5]<divingScores[6]&&divingScores[6]>divingScores[0];
+			lowestToHighest = divingScores[0]<=divingScores[1]&&divingScores[1]<=divingScores[2]&&divingScores[2]<=divingScores[3]&&divingScores[3]<=divingScores[4]&&divingScores[4]<=divingScores[5]&&divingScores[5]<=divingScores[6]&&divingScores[6]>divingScores[0];
 		}while(lowestToHighest==false);
 //		System.out.println(divingScores[0]);
 //		System.out.println(divingScores[1]);
