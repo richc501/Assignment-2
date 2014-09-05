@@ -93,13 +93,13 @@ public class Temperatures {
 	private static int findHighestTemp(int[][] highAndLowTemps)
 	{
 		double max=highAndLowTemps[0][0];
-		int i;//index for highest
-		for(i=0;i<11;i++)//find highest high temp
+		int indexHigh;//index for highest
+		for(indexHigh=0;indexHigh<11;indexHigh++)//find highest high temp
 		{
-			if(highAndLowTemps[i][0]>max)
+			if(highAndLowTemps[indexHigh][0]>max)
 			{
-				max=highAndLowTemps[i][0];
-				indexOfHighestTemp=i;
+				max=highAndLowTemps[indexHigh][0];
+				indexOfHighestTemp=indexHigh;
 			}
 		}
 		return indexOfHighestTemp;
@@ -107,13 +107,13 @@ public class Temperatures {
 	private static int findLowestTemp(int[][] highAndLowTemps)
 	{
 		double min=highAndLowTemps[0][1];
-		int i;//index for lowest
-		for(i=0;i<11;i++)//finds lowest low temp
+		int indexLow;//index for lowest
+		for(indexLow=0;indexLow<11;indexLow++)//finds lowest low temp
 		{
-			if(highAndLowTemps[i][1]<min)
+			if(highAndLowTemps[indexLow][1]<min)
 			{
-				min=highAndLowTemps[i][1];
-				indexOfLowestTemp=i;
+				min=highAndLowTemps[indexLow][1];
+				indexOfLowestTemp=indexLow;
 			}
 		}
 		return indexOfLowestTemp;
