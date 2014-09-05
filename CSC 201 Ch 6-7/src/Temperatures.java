@@ -99,9 +99,7 @@ public class Temperatures {
 			if(highAndLowTemps[i][0]>max)
 			{
 				max=highAndLowTemps[i][0];
-				System.out.println(max);
 				indexOfHighestTemp=i;
-				System.out.println(indexOfHighestTemp);
 			}
 		}
 		return indexOfHighestTemp;
