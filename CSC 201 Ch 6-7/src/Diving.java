@@ -1,3 +1,24 @@
+//Richard Cunningham
+//You may only use statements that are discussed in the book through Chapter 6.
+//You must not use any Array class or Array method included in the Java libraries to solve this problem.
+//Console input and output must be used to solve this problem.
+//Use the following input values for the final test of this program:
+//Degree of difficulty 2.7
+//Judge #1 score 7.5
+//Judge #2 score 9.5
+//Judge #3 score 5.7
+//Judge #4 score 8.25
+//Judge #5 score 6.72
+//Judge #6 score 10.0
+//Judge #7 score 3.46
+//Save your complete console output to a text file to turn in with this assignment.
+//Post your Java source code file and your output text file in Blackboard using the Assignment Upload link below.
+
+//input degree of difficulty and check if valid
+//input array of scores while check if each one is valid
+//sort array from lowest to highest
+//find the sum ignoring the lowest number and highest number
+//multiply by the degree of difficulty and then 0.6d
 import java.util.Scanner;
 public class Diving 
 {
@@ -35,7 +56,7 @@ public class Diving
 		double temporaryNumber;
 		do
 		{
-			for(int i=0; i<=divingScores.length-2;i++)//swaps array indexes till lowest to highest
+			for(int i=0; i<=divingScores.length-2;i++)//swaps array index values till lowest to highest
 			{
 				int nextNumber=i+1;
 				if(divingScores[i]>=divingScores[nextNumber])
